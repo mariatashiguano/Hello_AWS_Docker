@@ -16,13 +16,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/Hello_AWS_Docker:latest # (Usa el nombre de tu repo)
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/Hello_AWS_Docker:latest
 
   deploy:
     needs: build-and-push
