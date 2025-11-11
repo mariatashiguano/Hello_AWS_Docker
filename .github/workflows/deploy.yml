@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/aws_practica:latest
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/Hello_AWS_Docker:latest
             docker stop hola-mundo-container || true
             docker rm hola-mundo-container || true
             docker run -d -p 80:80 --name hola-mundo-container ${{ secrets.DOCKERHUB_USERNAME }}/aws_practica:latest
